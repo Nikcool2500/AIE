@@ -52,7 +52,7 @@
    [ 244   32]]
   ```
   Precision для класса 1: 0.421, Recall: 0.116. Модель плохо обнаруживает миноритарный класс (низкий recall), но precision приемлемый.
-- **Интерпретация**: Permutation importance (RandomForest, top‑15 признаков):
+- **Интерпретация**: Permutation importance (StackingClassifier, top‑15 признаков):
   1. `f52` (важность ≈ 0.14)
   2. `f57` (≈ 0.10)
   3. `f04` (≈ 0.08)
