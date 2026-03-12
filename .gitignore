@@ -57,3 +57,5 @@ logs/
 *.old
 
 *template*
+
+data_CIFAR10/
