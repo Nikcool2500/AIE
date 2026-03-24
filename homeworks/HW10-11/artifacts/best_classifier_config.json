@@ -1,0 +1,6 @@
+{
+  "architecture": "ResNet18",
+  "augmentations": false,
+  "pretrained": true,
+  "fine_tune": "layer4+fc"
+}
