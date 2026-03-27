@@ -1,0 +1,10 @@
+{
+  "window_size": 10,
+  "hidden_size": 64,
+  "num_layers": 2,
+  "lr": 0.001,
+  "batch_size": 32,
+  "seed": 42,
+  "scaler_mean": 128.2521495016611,
+  "scaler_scale": 18.49701999697105
+}
