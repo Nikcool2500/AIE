@@ -59,3 +59,4 @@ logs/
 *template*
 
 data_CIFAR10*/
+catboost_info/
