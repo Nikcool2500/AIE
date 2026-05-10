@@ -1,0 +1,15 @@
+artifact_uri: file:z:/projects/AIE/project/notebooks/mlruns/433861505822934159/a969998104a94bcab8f6b8426f1fa6af/artifacts
+deleted_time: 1778410329652
+end_time: 1778409449241
+entry_point_name: ''
+experiment_id: '433861505822934159'
+lifecycle_stage: deleted
+run_id: a969998104a94bcab8f6b8426f1fa6af
+run_name: Random_forest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778409439700
+status: 4
+tags: []
+user_id: 098ja

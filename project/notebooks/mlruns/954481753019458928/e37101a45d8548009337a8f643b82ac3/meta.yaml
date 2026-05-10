@@ -1,0 +1,14 @@
+artifact_uri: file:z:/projects/AIE/project/notebooks/mlruns/954481753019458928/e37101a45d8548009337a8f643b82ac3/artifacts
+end_time: 1778271124953
+entry_point_name: ''
+experiment_id: '954481753019458928'
+lifecycle_stage: active
+run_id: e37101a45d8548009337a8f643b82ac3
+run_name: linear_regression_baseline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778271119591
+status: 3
+tags: []
+user_id: 098ja

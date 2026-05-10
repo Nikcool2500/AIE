@@ -1,0 +1,8 @@
+artifact_location: file:z:/projects/AIE/project/notebooks/mlruns/271779581847078824
+creation_time: 1778321673227
+experiment_id: '271779581847078824'
+last_update_time: 1778321673227
+lifecycle_stage: active
+name: Credit_Prediction_Experiments_NN
+trace_location: null
+workspace: default

@@ -1,0 +1,14 @@
+artifact_uri: file:z:/projects/AIE/project/notebooks/mlruns/956385833405544570/b19dea796f9d49b3a72e147a5def17a0/artifacts
+end_time: 1778442811477
+entry_point_name: ''
+experiment_id: '956385833405544570'
+lifecycle_stage: active
+run_id: b19dea796f9d49b3a72e147a5def17a0
+run_name: Catboost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778442801253
+status: 3
+tags: []
+user_id: 098ja

@@ -1,0 +1,10 @@
+artifact_location: file:z:/projects/AIE/project/notebooks/mlruns/433861505822934159/models/m-ceef1cd56cb7452f915e395f5c6ad097/artifacts
+creation_timestamp: 1778411362238
+experiment_id: '433861505822934159'
+last_updated_timestamp: 1778411365235
+model_id: m-ceef1cd56cb7452f915e395f5c6ad097
+model_type: null
+name: model
+source_run_id: 400411019c384715ae0bee5c6eea0728
+status: 2
+status_message: null

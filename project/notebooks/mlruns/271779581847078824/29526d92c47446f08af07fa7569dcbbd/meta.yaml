@@ -1,0 +1,14 @@
+artifact_uri: file:z:/projects/AIE/project/notebooks/mlruns/271779581847078824/29526d92c47446f08af07fa7569dcbbd/artifacts
+end_time: 1778322378085
+entry_point_name: ''
+experiment_id: '271779581847078824'
+lifecycle_stage: active
+run_id: 29526d92c47446f08af07fa7569dcbbd
+run_name: NN_baseline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778322372969
+status: 3
+tags: []
+user_id: 098ja

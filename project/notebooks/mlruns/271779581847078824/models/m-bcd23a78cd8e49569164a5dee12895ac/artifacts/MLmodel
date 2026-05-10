@@ -1,0 +1,23 @@
+artifact_path: file:z:/projects/AIE/project/notebooks/mlruns/271779581847078824/models/m-bcd23a78cd8e49569164a5dee12895ac/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.13.2
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.7.1+cu118
+mlflow_version: 3.12.0
+model_id: m-bcd23a78cd8e49569164a5dee12895ac
+model_size_bytes: 28156
+model_uuid: m-bcd23a78cd8e49569164a5dee12895ac
+prompts: null
+run_id: d788d78f15144229abbf9d5ad7f30270
+utc_time_created: '2026-05-09 11:08:55.152765'
