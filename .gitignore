@@ -60,3 +60,12 @@ logs/
 
 data_CIFAR10*/
 catboost_info/
+
+project/mlflow.db
+project/notebooks/mlruns/
+*_mlflow
+!CB_mlflow
+
+project/artifacts/*
+!artifacts/model_catboost_best_optuna.pkl
+!artifacts/scaler_cb.pkl

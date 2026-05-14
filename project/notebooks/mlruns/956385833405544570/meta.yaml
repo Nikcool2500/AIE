@@ -1,8 +1,0 @@
-artifact_location: file:z:/projects/AIE/project/notebooks/mlruns/956385833405544570
-creation_time: 1778417324187
-experiment_id: '956385833405544570'
-last_update_time: 1778417324187
-lifecycle_stage: active
-name: Credit_Prediction_Experiments_Catboost
-trace_location: null
-workspace: default
