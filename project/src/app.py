@@ -6,6 +6,8 @@ from typing import List
 from data import ClientProfile, PredictionResponse
 from model import model_service
 from config import APP_HOST, APP_PORT
+import time
+from utils import count_request, get_metrics_summary, save_metrics
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -35,6 +37,11 @@ async def health_check():
     else:
         return {"status": "unhealthy", "model_loaded": False}
 
+@app.get("/metrics")
+async def metrics():
+    """Простые метрики: счётчики запросов и среднее время ответа"""
+    return get_metrics_summary()
+
 @app.post("/predict", response_model=PredictionResponse)
 async def predict_credit_limit(profiles: List[ClientProfile]):
     """
@@ -42,16 +49,29 @@ async def predict_credit_limit(profiles: List[ClientProfile]):
     
     - **profiles**: Список объектов ClientProfile.
     """
+    start_time = time.time()
+    endpoint = "/predict"
+    
     try:
+        logger.info(f"Получен запрос: {profiles}")
+        
         features = [p.dict() for p in profiles]
-        
         predictions = model_service.predict(features)
-        
         if len(predictions) == 1:
-            return PredictionResponse(predicted_credit_limit=float(predictions[0]))
+            result = PredictionResponse(predicted_credit_limit=float(predictions[0]))
+            
+            duration = time.time() - start_time
+            count_request(endpoint, status=200, duration=duration)
+            logger.info(f"Успешный ответ за {duration:.3f}с: {result}")
+            
+            save_metrics(get_metrics_summary())
+            
+            return result
 
     except Exception as e:
-        logger.error(f"Prediction error: {e}")
+        duration = time.time() - start_time
+        count_request(endpoint, status=500, duration=duration)
+        logger.error(f"Prediction error: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
 if __name__ == "__main__":

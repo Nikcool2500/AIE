@@ -1,23 +1,18 @@
 import json
 import logging
-import time
 from datetime import datetime
 from pathlib import Path
 
-# Создаём папку для логов, если нет
-Path("logs").mkdir(exist_ok=True)
+Path("logs").parent.mkdir(exist_ok=True)
 
 def setup_logger(name="api", log_file="logs/api.log", level=logging.INFO):
     """Настраивает логгер с выводом в файл и консоль"""
     logger = logging.getLogger(name)
     logger.setLevel(level)
     
-    # Чтобы не дублировать хендлеры при перезагрузке модуля
     if not logger.handlers:
-        # Файловый хендлер
         fh = logging.FileHandler(log_file, encoding="utf-8", mode="a")
         fh.setLevel(level)
-        # Консольный хендлер
         ch = logging.StreamHandler()
         ch.setLevel(level)
         
@@ -35,7 +30,6 @@ def save_metrics(metrics: dict, path="logs/metrics.json"):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     metrics["timestamp"] = datetime.now().isoformat()
     
-    # Читаем старые метрики и добавляем новые (простой лог)
     try:
         with open(path, "r", encoding="utf-8") as f:
             all_metrics = json.load(f)
@@ -49,7 +43,6 @@ def save_metrics(metrics: dict, path="logs/metrics.json"):
     
     logging.getLogger("api").info(f"Метрики сохранены в {path}")
 
-# Простой счётчик запросов в памяти (для минимума)
 _request_counter = {"total": 0, "by_endpoint": {}, "by_status": {}}
 _request_timings = []
 

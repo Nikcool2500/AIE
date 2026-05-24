@@ -1,9 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Literal
 
-# 1. Определяем допустимые значения для каждой категории
-# Исключаем nan, так как он обрабатывается внутри модели как 'Unknown' или заполняется медианой/модой
-
 GenderType = Literal["M", "F", "Unknown"]
 
 EducationLevelType = Literal[
@@ -58,7 +55,6 @@ class ClientProfile(BaseModel):
     Months_Inactive_12_mon: int = Field(..., ge=0, le=6, example=1, description="Месяцев неактивности")
     Contacts_Count_12_mon: int = Field(..., ge=0, le=6, example=3, description="Контактов с поддержкой")
     
-    # Числовые признаки (можно добавить ограничения min/max при желании)
     Credit_Limit: float = Field(..., gt=0, example=10000.0, description="Текущий лимит")
     Total_Revolving_Bal: int = Field(..., ge=0, example=777, description="Оборотный баланс")
     Total_Amt_Chng_Q4_Q1: float = Field(..., example=0.75, description="Изменение суммы транзакций Q4/Q1")

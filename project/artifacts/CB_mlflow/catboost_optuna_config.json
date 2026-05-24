@@ -1,8 +1,8 @@
 {
   "iterations": 600,
-  "depth": 9,
-  "learning_rate": 0.061502810567617416,
-  "l2_leaf_reg": 1.3240524530410769,
+  "depth": 8,
+  "learning_rate": 0.054331784826929096,
+  "l2_leaf_reg": 4.498542289146838,
   "grow_policy": "Lossguide",
   "loss_function": "RMSE",
   "target_col": "Credit_Limit",

@@ -11,7 +11,6 @@ class CreditLimitModel:
         self.scaler = None
         self.config = None
         self.is_loaded = False
-        # Колонки для логирования (из ноутбука)
         self.cols_to_log = ['Total_Revolving_Bal', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Ct_Chng_Q4_Q1', 'Avg_Utilization_Ratio']
 
     def load_artifacts(self):
@@ -51,34 +50,26 @@ class CreditLimitModel:
         if not self.is_loaded:
             self.load_artifacts()
 
-        # 1. Создаём DataFrame из входных данных
         df_input = pd.DataFrame(features)
 
-        # 2. Получаем метаданные о типах признаков из конфига
         num_cols = self.config.get('num_cols', [])
         cat_cols = self.config.get('cat_cols', [])
 
-        # 3. Проверяем наличие всех требуемых колонок
         all_cols = num_cols + cat_cols
         for col in all_cols:
             if col not in df_input.columns:
                 raise ValueError(f"Missing required column: {col}")
 
-        # 4. Применяем log1p трансформацию к нужным колонкам
         df_prepared = df_input.copy()
         for col in self.cols_to_log:
             if col in df_prepared.columns:
                 df_prepared[col] = np.log1p(df_prepared[col])
 
-        # 5. Масштабируем только числовые признаки (как в ноутбуке)
         if num_cols:
             df_prepared[num_cols] = self.scaler.transform(df_prepared[num_cols])
 
-        # 6. Предсказание
-        # CatBoost помнит cat_features из обучения, поэтому передаём данные как есть
         predictions = self.model.predict(df_prepared)
 
         return predictions.tolist()
 
-# Глобальный экземпляр модели
 model_service = CreditLimitModel()

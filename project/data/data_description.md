@@ -1,7 +1,7 @@
 # Описание датасета: CreditPrediction
 
 ## Источник данных
-- **URL**: https://github.com/liAmirali/UIML-credit-limit-project/main/CreditPrediction.csv
+- **URL**: `https://raw.githubusercontent.com/liAmirali/UIML-credit-limit-project/refs/heads/main/CreditPrediction.csv`
 - **Лицензия**: Открытый датасет для учебных целей
 - **Оригинал**: Адаптированная версия датасета "Credit Card Customer Data" (Kaggle)
 

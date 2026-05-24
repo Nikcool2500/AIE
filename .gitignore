@@ -63,9 +63,17 @@ catboost_info/
 
 project/mlflow.db
 project/notebooks/mlruns/
-*_mlflow
-!CB_mlflow
+*_mlflow/
+!CB_mlflow/
 
 project/artifacts/*
-!artifacts/model_catboost_best_optuna.pkl
-!artifacts/scaler_cb.pkl
+!project/artifacts/model_catboost_best_optuna.pkl
+!project/artifacts/scaler_cb.pkl
+
+!project/artifacts/catboost/
+!project/artifacts/lin_reg/
+!project/artifacts/nn/
+!project/artifacts/nn_log/
+!project/artifacts/random_forest/
+
+project/data/CreditPrediction.csv
