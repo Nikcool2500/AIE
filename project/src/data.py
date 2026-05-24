@@ -55,7 +55,6 @@ class ClientProfile(BaseModel):
     Months_Inactive_12_mon: int = Field(..., ge=0, le=6, example=1, description="Месяцев неактивности")
     Contacts_Count_12_mon: int = Field(..., ge=0, le=6, example=3, description="Контактов с поддержкой")
     
-    Credit_Limit: float = Field(..., gt=0, example=10000.0, description="Текущий лимит")
     Total_Revolving_Bal: int = Field(..., ge=0, example=777, description="Оборотный баланс")
     Total_Amt_Chng_Q4_Q1: float = Field(..., example=0.75, description="Изменение суммы транзакций Q4/Q1")
     Total_Trans_Amt: int = Field(..., ge=0, example=4400, description="Сумма транзакций")
